@@ -26,7 +26,7 @@ class postgresql::service(
   }
 
   exec { 'init-postgresql-db':
-    command => "initdb -E UTF-8 ${datadir}",
+    command => "initdb --locale en_US.UTF-8 ${datadir}",
     creates => "${datadir}/PG_VERSION",
   }
 
